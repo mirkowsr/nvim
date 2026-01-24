@@ -5,6 +5,7 @@ return {
   event = "BufReadPost",
   opts = {
     suggestion = {
+      -- disable in blink.cmp
       enabled = not vim.g.ai_cmp,
       auto_trigger = true,
       hide_during_completion = vim.g.ai_cmp,

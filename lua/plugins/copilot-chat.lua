@@ -10,6 +10,7 @@ return {
   },
   build = "make tiktoken",
   opts = {
-    window = { width = 0.35 },
+    model = "claude-sonnet-4.5",
+    window = { width = 0.5 },
   },
 }
