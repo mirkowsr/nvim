@@ -10,6 +10,13 @@ return {
   },
   build = "make tiktoken",
   opts = {
-    window = { width = 0.35 },
+    window = { width = 0.50 },
+    model = "claude-sonnet-4.5",
+    prompts = {
+      TestPrompt = {
+        prompt = "hello",
+        description = "A simple test prompt.",
+      },
+    },
   },
 }
