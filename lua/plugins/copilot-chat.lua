@@ -18,5 +18,11 @@ return {
         description = "A simple test prompt.",
       },
     },
+    mappings = {
+      reset = {
+        normal = "<C-d>",
+        insert = "<C-d>",
+      },
+    },
   },
 }
