@@ -9,14 +9,14 @@ if true then return {} end
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  -- add kanagawa
+  { "rebelot/kanagawa.nvim" },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load kanagawa
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "kanagawa",
     },
   },
 

@@ -67,5 +67,21 @@
       "Sandbox.storyName = '🛠 Sandbox';"
     ],
     "description": "Storybook boilerplate"
+  },
+  "React arrow component": {
+    "prefix": "react:component",
+    "body": [
+      "import React from 'react';",
+      "",
+      "import * as coreStyles from '@allegro/metrum-core/main.json';",
+      "import classNames from '@allegro/metrum-tools-classnames';",
+      "",
+      "export const $1 = ({}): React.ReactElement => {",
+      "",
+      "  return <></>",
+      "}",
+      ""
+    ],
+    "description": "React arrow component"
   }
 }
