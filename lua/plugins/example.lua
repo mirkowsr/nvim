@@ -103,8 +103,34 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- tsserver will be automatically installed with mason and loaded with lspconfig
-        tsserver = {},
+        tsserver = {
+          -- Enable file watching for monorepo
+          init_options = {
+            preferences = {
+              includePackageJsonAutoImports = "on",
+            },
+          },
+          root_dir = function(fname)
+            local util = require("lspconfig.util")
+            -- Find root by looking for workspace indicators
+            return util.root_pattern("pnpm-workspace.yaml", "lerna.json", ".git")(fname)
+              or util.root_pattern("package.json")(fname)
+          end,
+          -- Increase memory for large monorepos
+          cmd = { "typescript-language-server", "--stdio", "--tsserver-log-verbosity=off" },
+          settings = {
+            typescript = {
+              preferences = {
+                importModuleSpecifier = "non-relative",
+              },
+            },
+            javascript = {
+              preferences = {
+                importModuleSpecifier = "non-relative",
+              },
+            },
+          },
+        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig

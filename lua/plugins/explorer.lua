@@ -2,13 +2,20 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
-    explorer = {
-      -- leave empty or customize explorer settings
-    },
     picker = {
+      exclude = {
+        -- add folder names here to exclude
+        ".git",
+        "node_modules",
+      },
       sources = {
         explorer = {
-          -- leave empty or customize picker settings
+          hidden = true,
+          ignored = true,
+        },
+        files = {
+          hidden = true,
+          ignored = true,
         },
       },
     },
